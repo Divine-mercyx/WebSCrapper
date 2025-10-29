@@ -19,7 +19,7 @@ def fetch_news(keyword):
     soup = BeautifulSoup(res.text, "xml")
     articles = []
 
-    for item in soup.find_all("item")[:10]:  # limit to top 10
+    for item in soup.find_all("item"):  # limit to top 10
         articles.append({
             "title": item.title.text,
             "link": item.link.text,
